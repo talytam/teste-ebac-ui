@@ -27,4 +27,14 @@ describe("Funcionalidade página de produtos", () => {
     cy.get('.dropdown-toggle > .text-skin').should('contain', quantidade)
     cy.get('.woocommerce-message').should('contain', quantidade + '"Ariel Roll Sleeve Sweatshirt"')
   });
+
+  it('Deve adicionar produtos ao carrinho - Usando comandos customizados', () => {
+    cy.addprodutos('Aero Daily Fitness Tee', 'M', 'Black', 2 )
+    
+  });
+
+  it('Deve adicionar produtos ao carrinho - Usando comandos customizados', () => {
+    cy.addprodutos('Ariel Roll Sleeve Sweatshirt', 'XS', 'Red', 5 )
+    
+  });
 });
