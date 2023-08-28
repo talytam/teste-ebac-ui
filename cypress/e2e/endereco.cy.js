@@ -12,7 +12,7 @@ describe('Funcionalidade Endereços - Faturamento e Entrega', () => {
     });
 
     it('Deve fazer cadastro de faturamento com sucesso', () => {
-        EnderecoPage.EditarEnderecoFaturamento()
+        EnderecoPage.EditarEnderecoFaturamento('Talyta', 'Moy', 'ebac', 'Brasil', 'Rua pedra', '458', 'Curitiba', 'Paraná', '85654789', '25689741', 'exemplobobo@ebac.com')
         cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
     })
 
@@ -32,4 +32,19 @@ describe('Funcionalidade Endereços - Faturamento e Entrega', () => {
             )
         cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
     })
+
+    it.only('Deve fazer edição de endereço de entrega - Usando arquivo de dados', () => {
+        EnderecoPage.EditarEnderecoEntrega(
+            dadosEndereco[0].nome,
+            dadosEndereco[0].sobrenome,
+            dadosEndereco[0].empresa,
+            dadosEndereco[0].pais,
+            dadosEndereco[0].endereco,
+            dadosEndereco[0].numero,
+            dadosEndereco[0].cidade,
+            dadosEndereco[0].estado,
+            dadosEndereco[0].cep
+        )
+        
+    });
 });
