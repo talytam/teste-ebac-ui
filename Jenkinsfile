@@ -10,18 +10,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                script {
-                    bat 'npm install'
-                }
+                bat 'npm install'
             }
         }
 
         stage('Run Cypress Tests') {
             steps {
-                script {
-                    bat 'npx cypress run --headless --browser chrome --no-exit'
-
-                }
+                bat 'npx cypress run --headless --browser chrome --no-exit'
             }
         }
     }
