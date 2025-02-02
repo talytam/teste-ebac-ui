@@ -22,7 +22,7 @@ pipeline {
                 bat 'set NO_COLOR=1'
                 
 
-                bat 'npm run cy:run'
+                bat 'npm cy:run'
             }
         }
     }
