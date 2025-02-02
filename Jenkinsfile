@@ -15,7 +15,7 @@ pipeline {
 
                 bat '''set NO_COLOR=1'
 
-npm cy:run'''
+npm run cy:run'''
             }
         }
     }
