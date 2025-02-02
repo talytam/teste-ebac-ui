@@ -19,7 +19,8 @@ pipeline {
         stage('Run Cypress Tests') {
             steps {
                 script {
-                    bat 'npx cypress run --browser chrome'
+                    bat 'npx cypress run --headless --browser chrome --no-exit'
+
                 }
             }
         }
