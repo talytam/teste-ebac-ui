@@ -11,7 +11,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-
                     bat 'npm install'
                 }
             }
@@ -20,8 +19,9 @@ pipeline {
         stage('Run Cypress Tests') {
             steps {
                 script {
-
                     bat 'npx cypress run --browser chrome'
                 }
             }
         }
+    }
+}
